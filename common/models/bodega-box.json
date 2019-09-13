@@ -1,0 +1,33 @@
+{
+  "name": "BodegaBox",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "boxId": {
+      "type": "string"
+    },
+    "location": {
+      "type": "geopoint"
+    },
+    "itemLimit": {
+      "type": "number",
+      "default": 10
+    },
+    "minItemTotalCountLimit": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "organisation": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,24 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "rfidTagId": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "shoppingHistory": {
+      "type": "hasMany",
+      "model": "Cart",
+      "foreignKey": "shoppingId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

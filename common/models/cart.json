@@ -1,0 +1,50 @@
+{
+  "name": "Cart",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "totalPrice": {
+      "type": "number"
+    },
+    "totalCount": {
+      "type": "number"
+    },
+    "totalItems": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "products": {
+      "type": "hasMany",
+      "model": "Product",
+      "foreignKey": ""
+    },
+    "session": {
+      "type": "belongsTo",
+      "model": "Session",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "shoppingId"
+    },
+    "bodegaBox": {
+      "type": "belongsTo",
+      "model": "BodegaBox",
+      "foreignKey": "boxId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

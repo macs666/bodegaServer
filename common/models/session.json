@@ -1,0 +1,26 @@
+{
+  "name": "Session",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "startTime": {
+      "type": "date"
+    },
+    "endTime": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "carts": {
+      "type": "hasOne",
+      "model": "Cart",
+      "foreignKey": "sessionId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
