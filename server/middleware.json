@@ -4,7 +4,7 @@
   },
   "initial": {
     "compression": {
-      "enabled":false
+      "enabled": false
     },
     "cors": {
       "params": {
@@ -22,7 +22,7 @@
     "helmet#hsts": {
       "params": {
         "maxAge": 0,
-        "includeSubdomains": true
+        "includeSubDomains": true
       }
     },
     "helmet#hidePoweredBy": {},

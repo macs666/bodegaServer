@@ -13,6 +13,12 @@
     "user": "",
     "connector": "mongodb",
     "useNewUrlParser": true,
-    "useUnifiedTopology": true 
+    "useUnifiedTopology": true
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./client"
   }
 }
