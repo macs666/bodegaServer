@@ -9,6 +9,16 @@
     "rfidTagId": {
       "type": "string",
       "required": true
+    },
+    "points": {
+      "type": "number",
+      "default": 0,
+      "required": false
+    },
+    "signedInToBox": {
+      "type": "boolean",
+      "default": false,
+      "required": false
     }
   },
   "validations": [],

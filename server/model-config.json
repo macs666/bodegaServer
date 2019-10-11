@@ -55,5 +55,13 @@
   "BodegaBox": {
     "dataSource": "mongodb",
     "public": true
+  },
+  "Attatchment": {
+    "dataSource": "storage",
+    "public": true
+  },
+  "Organisation": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }

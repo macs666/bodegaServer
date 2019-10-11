@@ -1,0 +1,37 @@
+{
+  "name": "Organisation",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "bodegaPointBase": {
+      "type": "number",
+      "default": 20
+    },
+    "communityScore": {
+      "type": "number",
+      "default": 200
+    }
+  },
+  "validations": [],
+  "relations": {
+    "bodegaBoxes": {
+      "type": "hasMany",
+      "model": "BodegaBox",
+      "foreignKey": "organisationId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

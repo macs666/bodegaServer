@@ -24,8 +24,8 @@
   "relations": {
     "organisation": {
       "type": "belongsTo",
-      "model": "user",
-      "foreignKey": ""
+      "model": "Organisation",
+      "foreignKey": "organisationId"
     }
   },
   "acls": [],
