@@ -3,7 +3,14 @@ exports.cardSignIn = function(BodegaBox){
     BodegaBox.touchRfidcard = function(tagId,cb) {
         var User = BodegaBox.app.models.user
         User.findOne({fields: {rfidTagId: tagId}}, function(err,instance){
-            cb()
+            if(instance != null) {
+                cb(null, instance)
+            } else {
+                var error = new Error();
+                error.status = 500;
+                error.message = 'Could not find user related to RFID card'; 
+                cb(error, null)
+            }
         })
     }
 
@@ -17,6 +24,6 @@ exports.cardSignIn = function(BodegaBox){
           type: 'object',
           root: true
         },
-        http: {path: '/:id/blogDetails', verb: 'get'}
+        http: {path: '/touchRfidcard', verb: 'post'}
       });
 }
