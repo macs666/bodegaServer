@@ -12,13 +12,13 @@
     },
     "points": {
       "type": "number",
-      "default": 0,
-      "required": false
+      "required": false,
+      "default": 0
     },
     "signedInToBox": {
       "type": "boolean",
-      "default": false,
-      "required": false
+      "required": false,
+      "default": false
     }
   },
   "validations": [],
@@ -29,6 +29,13 @@
       "foreignKey": "shoppingId"
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }

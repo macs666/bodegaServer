@@ -1,23 +1,22 @@
 {
-  "name": "Product",
+  "name": "Transaction",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "name": {
+    "issueDate": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "checksumhash": {
+      "type": "string"
+    },
+    "paymentType": {
       "type": "string",
-      "required": true
-    },
-    "brand": {
-      "type": "string"
-    },
-    "quantity": {
-      "type": "string"
-    },
-    "category": {
-      "type": "string"
+      "required": true,
+      "default": "paytm"
     }
   },
   "validations": [],

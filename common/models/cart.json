@@ -17,8 +17,8 @@
     },
     "completed": {
       "type": "boolean",
-      "default": false,
-      "required": false
+      "required": false,
+      "default": false
     }
   },
   "validations": [],
@@ -54,6 +54,13 @@
       }
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }

@@ -1,10 +1,14 @@
 exports.cardSignIn = function(BodegaBox){
 
-    BodegaBox.touchRfidcard = function(tagId,cb) {
+    BodegaBox.touchRfidcard = function(id,tagId,cb) {
         var User = BodegaBox.app.models.user
+        var Cart = BodegaBox.app.models.Cart
         User.findOne({fields: {rfidTagId: tagId}}, function(err,instance){
             if(instance != null) {
+                console.log(instance)
                 cb(null, instance)
+            } else if (err){
+                cb(err,null)
             } else {
                 var error = new Error();
                 error.status = 500;
@@ -17,6 +21,7 @@ exports.cardSignIn = function(BodegaBox){
     BodegaBox.remoteMethod('touchRfidcard', {
         description: 'Blog details api with prevoius. next and related blogs',
         accepts: [
+            {arg: 'id', http: 'path', type: 'string'},
             {arg: 'tagId', type: 'string', required: true}
         ],
         returns: {
@@ -24,6 +29,6 @@ exports.cardSignIn = function(BodegaBox){
           type: 'object',
           root: true
         },
-        http: {path: '/touchRfidcard', verb: 'post'}
+        http: {path: '/:id/touchRfidcard', verb: 'post'}
       });
 }

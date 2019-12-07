@@ -6,7 +6,7 @@
 <div id="result"></div>
 
 <script>
-var urlToChangeStream = '/api/Sessions/change-stream';
+var urlToChangeStream = '/api/Sessions/change-stream?access_token=YAsAIm4o2Hurn0e0SbyR7BQMRb8HT7liWpy4g77edZQS0Yfi0eF3iVF7TpykEOYh';
 var src = new EventSource(urlToChangeStream);
 src.addEventListener('data', function(msg) {
   var data = JSON.parse(msg.data);
